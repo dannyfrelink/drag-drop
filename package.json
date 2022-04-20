@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/dannyfrelink/hcd-date-picker#readme",
   "dependencies": {
-    "express": "^4.17.3",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }
