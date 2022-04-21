@@ -36,3 +36,16 @@ article a {
     height: 4vw;
     color: purple;
 }
+
+article a img {
+    width: 100%;
+    height: 100%;
+}
+
+article:focus-within {
+    background-color: yellow;
+}
+
+article a:focus {
+    outline: none;
+}
