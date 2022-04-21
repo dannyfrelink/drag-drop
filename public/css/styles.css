@@ -1,0 +1,38 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 85vw;
+    font-size: 4.267vw;
+}
+
+article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 35vw;
+    height: 17.5vw;
+    border: 3px solid green;
+}
+
+article p {
+    text-align: center;
+    width: 90%;
+}
+
+article a {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    border: 1px solid purple;
+    width: 4vw;
+    height: 4vw;
+    color: purple;
+}
