@@ -15,7 +15,7 @@ article {
     position: fixed;
     width: 35vw;
     height: 17.5vw;
-    border: 3px solid green;
+    border: 0.8vw solid green;
 }
 
 article p {
@@ -31,7 +31,7 @@ article a {
     top: 0;
     right: 0;
     text-decoration: none;
-    border: 1px solid purple;
+    border: 0.267vw solid purple;
     width: 4vw;
     height: 4vw;
     color: purple;
