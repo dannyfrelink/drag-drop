@@ -16,6 +16,11 @@ article {
     width: 35vw;
     height: 17.5vw;
     border: 0.8vw solid green;
+    background-color: white;
+}
+
+article.dragged {
+    border-color: blue;
 }
 
 article p {
