@@ -21,6 +21,7 @@ article {
 
 article.dragged {
     border-color: blue;
+    z-index: 1;
 }
 
 article p {
