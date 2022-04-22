@@ -7,9 +7,8 @@ for (let i = 0; i < articles.length; i++) {
 let clickCounter = 0;
 
 for (let i = 0; i < anchors.length; i++) {
-    anchors[i].addEventListener('click', event => {
+    anchors[i].addEventListener('focus', event => {
         event.preventDefault();
-        console.log(articles[i])
 
         clickCounter = clickCounter + 1;
         if(clickCounter > 1) {
