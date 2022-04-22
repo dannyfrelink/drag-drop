@@ -1,38 +1,30 @@
 const anchors = document.querySelectorAll('a');
 const articles = document.querySelectorAll('article');
 for (let i = 0; i < articles.length; i++) {
-    articles[i].style.top = "100px";
-    articles[i].style.left = "100px";
+    articles[i].style.top = `${Math.floor(Math.random() * 400) + 100}px`;
+    articles[i].style.left = `${Math.floor(Math.random() * 500) + 100}px`;
 }
-let clickCounter = 0;
 
 for (let i = 0; i < anchors.length; i++) {
     anchors[i].addEventListener('focus', event => {
         event.preventDefault();
-
-        clickCounter = clickCounter + 1;
-        if(clickCounter > 1) {
-            articles[i].removeEventListener('keydown', moveKeys);
-            clickCounter = 0;
-            articles.forEach(article => {
-                article.classList.remove('dragged');
-            });
-        } else {
-            articles[i].classList.remove('dragged');
-            articles[i].classList.add('dragged');
-            articles[i].addEventListener('keydown', moveKeys);
-        }
+        articles.forEach(article => {
+            article.classList.remove('dragged');
+            article.removeEventListener('keydown', moveKeys);
+        });
+        articles[i].classList.add('dragged');
+        articles[i].addEventListener('keydown', moveKeys);
     });
 
     const moveKeys = e => {
         const keyCode = e.keyCode;
-        if(keyCode === 37) {
+        if(keyCode === 37 || keyCode === 72) {
             articles[i].style.left = parseInt(articles[i].style.left) - 10 + "px";
-        } else if(keyCode === 38) {
+        } else if(keyCode === 38 || keyCode === 75) {
             articles[i].style.top = parseInt(articles[i].style.top) - 10 + "px";
-        } else if(keyCode === 39) {
+        } else if(keyCode === 39 || keyCode === 76) {
             articles[i].style.left = parseInt(articles[i].style.left) + 10 + "px";
-        } else if(keyCode === 40) {
+        } else if(keyCode === 40 || keyCode === 74) {
             articles[i].style.top = parseInt(articles[i].style.top) + 10 + "px";
         }
     }
