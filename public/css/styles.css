@@ -8,6 +8,27 @@ main {
     font-size: 4.267vw;
 }
 
+input[type="radio"] {
+    opacity: 0;
+}
+
+input[type="radio"]:focus + label {
+    background-color: yellow;
+}
+
+input[type="radio"]:checked + label {
+    border-color: blue;
+    background-color: yellow;
+}
+
+label {
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.5rem;
+    border: 3px solid green;
+    border-radius: 0.25rem;
+}
+
 article {
     display: flex;
     justify-content: center;
