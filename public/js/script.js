@@ -1,6 +1,6 @@
+const themeSelector = document.querySelectorAll('input[type="radio"]');
+const sections = document.querySelectorAll('section');
 const anchors = document.querySelectorAll('a');
-const themeSelector = document.querySelectorAll('input[type="radio"]')
-const images = document.querySelectorAll('a>img');
 
 window.onload = () => {
     themeSelector[0].focus();
@@ -9,14 +9,15 @@ window.onload = () => {
 anchors.forEach(anchor => {
     anchor.style.top = `${Math.floor(Math.random() * 250) + 100}px`;
     anchor.style.left = `${Math.floor(Math.random() * 650) + 200}px`;
-})
+});
+
 
 anchors.forEach(anchor => {
     anchor.addEventListener('focus', event => {
         event.preventDefault();
-        anchors.forEach(d => {
-            d.classList.remove('dragged');
-            d.removeEventListener('keydown', moveKeys);
+        anchors.forEach(a => {
+            a.classList.remove('dragged');
+            a.removeEventListener('keydown', moveKeys);
         });
         anchor.classList.add('dragged');
         anchor.addEventListener('keydown', moveKeys);
@@ -36,13 +37,20 @@ anchors.forEach(anchor => {
     }
 });
 
-for (let i = 0; i < images.length; i++) {
-    themeSelector.forEach(theme => {
-        if (theme.checked) {
-            images[i].src = `images/${theme.id}s/${theme.id}-${[i]}.png`
+console.log(sections)
+
+themeSelector.forEach(theme => {
+    sections.forEach(section => {
+        if (theme.checked && section.id === `${theme.id}s`) {
+            console.log('test')
+            section.classList.remove('hidden');
         }
         theme.addEventListener('click', () => {
-            images[i].src = `images/${theme.id}s/${theme.id}-${[i]}.png`
-        })
+            if (section.id === `${theme.id}s`) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
     });
-}
+});

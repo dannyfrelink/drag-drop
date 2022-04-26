@@ -37,6 +37,10 @@ label {
     border-radius: 0.25rem;
 }
 
+.hidden {
+    display: none;
+}
+
 a {
     position: fixed;
     display: flex;
