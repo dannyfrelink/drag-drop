@@ -37,40 +37,37 @@ label {
     border-radius: 0.25rem;
 }
 
-article {
+a {
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20%;
-    border: 0.5vw solid green;
-    background-color: white;
 }
 
-article.dragged {
-    border-color: blue;
+a.dragged {
+    border: 3px solid blue;
     z-index: 1;
 }
 
-article>img {
+a>img {
     height: 50vh;
 }
 
-article a {
+/* a {
     display: block;
-}
+} */
 
-article a img {
+/* a img {
     position: absolute;
     right: 0.5vw;
     top: 0.5vw;
-}
-
+} */
+/* 
 article:focus-within {
     background-color: yellow;
-}
+} */
 
-article a:focus {
+a:focus {
     outline: none;
 }
 
