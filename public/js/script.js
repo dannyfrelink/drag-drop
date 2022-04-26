@@ -3,9 +3,16 @@ const articles = document.querySelectorAll('article');
 const themeSelector = document.querySelectorAll('input[type="radio"]')
 const images = document.querySelectorAll('article>img');
 
+console.log(themeSelector[0])
+
+
+window.onload = () => {
+    themeSelector[0].focus();
+}
+
 articles.forEach(article => {
-    article.style.top = `${Math.floor(Math.random() * 400) + 100}px`;
-    article.style.left = `${Math.floor(Math.random() * 500) + 200}px`;
+    article.style.top = `${Math.floor(Math.random() * 250) + 100}px`;
+    article.style.left = `${Math.floor(Math.random() * 650) + 200}px`;
 })
 
 for (let i = 0; i < anchors.length; i++) {
@@ -38,5 +45,8 @@ for (let i = 0; i < images.length; i++) {
         if (theme.checked) {
             images[i].src = `images/${theme.id}s/${theme.id}-${[i]}.png`
         }
+        theme.addEventListener('click', () => {
+            images[i].src = `images/${theme.id}s/${theme.id}-${[i]}.png`
+        })
     });
 }

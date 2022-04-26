@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+body {
+    background-color: bisque;
+    color: #AC3B61;
+    font-weight: bold;
+}
+
 main {
     width: 85vw;
     margin: auto;
@@ -14,19 +20,20 @@ input[type="radio"] {
 }
 
 input[type="radio"]:focus + label {
-    background-color: yellow;
+    border-color: blue;
 }
 
-input[type="radio"]:checked + label {
-    border-color: blue;
-    background-color: yellow;
+input[type="radio"]:focus + label,
+input[type="radio"]:checked + label { 
+    background-color: #AC3B61;
+    color: white;
 }
 
 label {
     cursor: pointer;
     padding: 0.25rem 0.5rem;
     font-size: 1.5rem;
-    border: 3px solid green;
+    border: 3px solid #AC3B61;
     border-radius: 0.25rem;
 }
 
