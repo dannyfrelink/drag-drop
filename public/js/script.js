@@ -33,8 +33,6 @@ for (let i = 0; i < anchors.length; i++) {
     }
 }
 
-// console.log(themeSelector)
-
 for (let i = 0; i < images.length; i++) {
     themeSelector.forEach(theme => {
         if (theme.checked) {
