@@ -1,9 +1,12 @@
 const anchors = document.querySelectorAll('a');
 const articles = document.querySelectorAll('article');
-for (let i = 0; i < articles.length; i++) {
-    articles[i].style.top = `${Math.floor(Math.random() * 400) + 100}px`;
-    articles[i].style.left = `${Math.floor(Math.random() * 500) + 200}px`;
-}
+const themeSelector = document.querySelectorAll('input[type="radio"]')
+const images = document.querySelectorAll('article>img');
+
+articles.forEach(article => {
+    article.style.top = `${Math.floor(Math.random() * 400) + 100}px`;
+    article.style.left = `${Math.floor(Math.random() * 500) + 200}px`;
+})
 
 for (let i = 0; i < anchors.length; i++) {
     anchors[i].addEventListener('focus', event => {
@@ -28,4 +31,14 @@ for (let i = 0; i < anchors.length; i++) {
             articles[i].style.top = parseInt(articles[i].style.top) + 10 + "px";
         }
     }
+}
+
+// console.log(themeSelector)
+
+for (let i = 0; i < images.length; i++) {
+    themeSelector.forEach(theme => {
+        if (theme.checked) {
+            images[i].src = `images/${theme.id}s/${theme.id}-${[i]}.png`
+        }
+    });
 }

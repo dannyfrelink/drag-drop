@@ -5,6 +5,7 @@
 
 main {
     width: 85vw;
+    margin: auto;
     font-size: 4.267vw;
 }
 
@@ -29,6 +30,47 @@ label {
     border-radius: 0.25rem;
 }
 
+article {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    border: 0.5vw solid green;
+    background-color: white;
+}
+
+article.dragged {
+    border-color: blue;
+    z-index: 1;
+}
+
+article>img {
+    height: 50vh;
+}
+
+article a {
+    display: block;
+}
+
+article a img {
+    position: absolute;
+    right: 0.5vw;
+    top: 0.5vw;
+}
+
+article:focus-within {
+    background-color: yellow;
+}
+
+article a:focus {
+    outline: none;
+}
+
+
+
+
+/* 
 article {
     display: flex;
     justify-content: center;
@@ -73,4 +115,4 @@ article:focus-within {
 
 article a:focus {
     outline: none;
-}
+} */
