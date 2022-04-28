@@ -12,7 +12,27 @@ body {
 main {
     width: 85vw;
     margin: auto;
-    font-size: 4.267vw;
+}
+
+p {
+    position: absolute;
+    top: 1vw;
+    font-size: 1.5em;
+}
+
+#info-text {
+    left: 1vw;
+    width: 20ch;
+}
+
+#current-theme {
+    right: 1vw;
+    width: fit-content;
+    font-style: italic;
+}
+
+#current-theme::after {
+    content: 'Beers';
 }
 
 .hidden {
