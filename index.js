@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 4141;
+const PORT = process.env.PORT || 4141;
 const htmlPath = `${__dirname}/public/html/`;
 
 app.use(express.static('public'));
