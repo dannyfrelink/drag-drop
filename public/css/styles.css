@@ -31,10 +31,6 @@ p {
     font-style: italic;
 }
 
-#current-theme::after {
-    content: 'Beers';
-}
-
 .hidden {
     display: none;
 }

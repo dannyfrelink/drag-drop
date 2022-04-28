@@ -1,5 +1,6 @@
 const sections = document.querySelectorAll('section');
 const anchors = document.querySelectorAll('a');
+const currentThemeText = document.querySelector('#current-theme');
 
 anchors.forEach(anchor => {
     anchor.style.top = `${Math.floor(Math.random() * 250) + 100}px`;
@@ -32,11 +33,19 @@ anchors.forEach(anchor => {
     }
 });
 
+let counter = 0;
+
 window.addEventListener('keyup', e => {
-    const keyCode = e.keyCode
+    const keyCode = e.keyCode;
     if (keyCode === 32) {
+        counter++;
         sections.forEach(section => {
             section.classList.toggle('hidden');
+            if (counter % 2 === 1) {
+                currentThemeText.textContent = 'Current theme: Books';
+            } else {
+                currentThemeText.textContent = 'Current theme: Beers';
+            }
         });
     }
 });
