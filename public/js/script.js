@@ -1,4 +1,4 @@
-const sections = document.querySelectorAll('section');
+const sections = document.querySelectorAll('section:not(:first-of-type)');
 const anchors = document.querySelectorAll('a');
 const beerAnchors = document.querySelectorAll('#beers a');
 const bookAnchors = document.querySelectorAll('#books a');
