@@ -37,6 +37,20 @@ let counter = 0;
 
 window.addEventListener('keyup', e => {
     const keyCode = e.keyCode;
+    // console.log(e.keyCode)
+
+    if (keyCode === 80) {
+        for (let i = 0; i < anchors.length; i++) {
+            console.log(anchors[i].nextSibling.nextSibling)
+            // anchors[i].nextSibling.nextSibling.focus()
+            // e.target.nextSibling.nextSibling.focus();
+
+            // for (var i = 0; i < anchors.length; i++) {
+            //     var anchor = anchors[i];
+            // }
+        }
+    }
+
     if (keyCode === 32) {
         counter++;
         sections.forEach(section => {
