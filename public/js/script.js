@@ -1,10 +1,5 @@
-const themeSelector = document.querySelectorAll('input[type="radio"]');
 const sections = document.querySelectorAll('section');
 const anchors = document.querySelectorAll('a');
-
-window.onload = () => {
-    themeSelector[0].focus();
-}
 
 anchors.forEach(anchor => {
     anchor.style.top = `${Math.floor(Math.random() * 250) + 100}px`;
@@ -37,20 +32,11 @@ anchors.forEach(anchor => {
     }
 });
 
-console.log(sections)
-
-themeSelector.forEach(theme => {
-    sections.forEach(section => {
-        if (theme.checked && section.id === `${theme.id}s`) {
-            console.log('test')
-            section.classList.remove('hidden');
-        }
-        theme.addEventListener('click', () => {
-            if (section.id === `${theme.id}s`) {
-                section.classList.remove('hidden');
-            } else {
-                section.classList.add('hidden');
-            }
+window.addEventListener('keyup', e => {
+    const keyCode = e.keyCode
+    if (keyCode === 32) {
+        sections.forEach(section => {
+            section.classList.toggle('hidden');
         });
-    });
+    }
 });
