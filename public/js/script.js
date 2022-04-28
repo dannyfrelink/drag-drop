@@ -68,9 +68,9 @@ window.addEventListener('keyup', e => {
         sections.forEach(section => {
             section.classList.toggle('hidden');
             if (counterThemeSelector % 2 === 1) {
-                currentThemeText.textContent = 'Current theme: Books';
+                currentThemeText.textContent = 'Huidig thema: Boeken';
             } else {
-                currentThemeText.textContent = 'Current theme: Beers';
+                currentThemeText.textContent = 'Huidig thema: Bier';
             }
         });
     }
