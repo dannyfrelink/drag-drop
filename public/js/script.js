@@ -21,13 +21,13 @@ anchors.forEach(anchor => {
     const moveKeys = e => {
         const keyCode = e.keyCode;
         if (keyCode === 37 || keyCode === 72) {
-            anchor.style.left = parseInt(anchor.style.left) - 10 + "px";
+            anchor.style.left = parseInt(anchor.style.left) - 15 + "px";
         } else if (keyCode === 38 || keyCode === 75) {
-            anchor.style.top = parseInt(anchor.style.top) - 10 + "px";
+            anchor.style.top = parseInt(anchor.style.top) - 15 + "px";
         } else if (keyCode === 39 || keyCode === 76) {
-            anchor.style.left = parseInt(anchor.style.left) + 10 + "px";
+            anchor.style.left = parseInt(anchor.style.left) + 15 + "px";
         } else if (keyCode === 40 || keyCode === 74) {
-            anchor.style.top = parseInt(anchor.style.top) + 10 + "px";
+            anchor.style.top = parseInt(anchor.style.top) + 15 + "px";
         }
     }
 });
