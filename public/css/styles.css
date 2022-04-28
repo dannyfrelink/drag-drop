@@ -15,17 +15,19 @@ main {
 }
 
 p {
-    position: absolute;
-    top: 1vw;
+
     font-size: 1.5em;
 }
 
 #info-text {
+    position: absolute;
+    top: 1vw;
     left: 1vw;
-    width: 20ch;
 }
 
 #current-theme {
+    position: absolute;
+    top: 1vw;
     right: 1vw;
     width: fit-content;
     font-style: italic;

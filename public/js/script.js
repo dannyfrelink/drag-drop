@@ -45,11 +45,6 @@ let counterThemeSelector = 0;
 window.addEventListener('keyup', e => {
     const keyCode = e.keyCode;
 
-    if (counterThemeSelector % 2 === 1) {
-        arrayBookAnchors[counterTab].focus();
-    } else {
-        arrayBeerAnchors[counterTab].focus();
-    }
     if (keyCode === 79) {
         counterTab--;
         if (counterTab < 0) {
@@ -61,6 +56,11 @@ window.addEventListener('keyup', e => {
         if (counterTab === 15) {
             counterTab = 0
         }
+    }
+    if (counterThemeSelector % 2 === 1) {
+        arrayBookAnchors[counterTab].focus();
+    } else {
+        arrayBeerAnchors[counterTab].focus();
     }
 
     if (keyCode === 32) {
