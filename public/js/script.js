@@ -1,5 +1,11 @@
 const sections = document.querySelectorAll('section');
 const anchors = document.querySelectorAll('a');
+const beerAnchors = document.querySelectorAll('#beers a');
+const bookAnchors = document.querySelectorAll('#books a');
+const arrayBeerAnchors = [...beerAnchors];
+const arrayBookAnchors = [...bookAnchors];
+arrayBeerAnchors.reverse();
+arrayBookAnchors.reverse();
 const currentThemeText = document.querySelector('#current-theme');
 
 anchors.forEach(anchor => {
@@ -33,29 +39,35 @@ anchors.forEach(anchor => {
     }
 });
 
-let counter = 0;
+let counterTab = 0;
+let counterThemeSelector = 0;
 
 window.addEventListener('keyup', e => {
     const keyCode = e.keyCode;
-    // console.log(e.keyCode)
 
+    if (counterThemeSelector % 2 === 1) {
+        arrayBookAnchors[counterTab].focus();
+    } else {
+        arrayBeerAnchors[counterTab].focus();
+    }
+    if (keyCode === 79) {
+        counterTab--;
+        if (counterTab < 0) {
+            counterTab = 14
+        }
+    }
     if (keyCode === 80) {
-        for (let i = 0; i < anchors.length; i++) {
-            console.log(anchors[i].nextSibling.nextSibling)
-            // anchors[i].nextSibling.nextSibling.focus()
-            // e.target.nextSibling.nextSibling.focus();
-
-            // for (var i = 0; i < anchors.length; i++) {
-            //     var anchor = anchors[i];
-            // }
+        counterTab++;
+        if (counterTab === 15) {
+            counterTab = 0
         }
     }
 
     if (keyCode === 32) {
-        counter++;
+        counterThemeSelector++;
         sections.forEach(section => {
             section.classList.toggle('hidden');
-            if (counter % 2 === 1) {
+            if (counterThemeSelector % 2 === 1) {
                 currentThemeText.textContent = 'Current theme: Books';
             } else {
                 currentThemeText.textContent = 'Current theme: Beers';
