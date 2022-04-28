@@ -15,28 +15,6 @@ main {
     font-size: 4.267vw;
 }
 
-input[type="radio"] {
-    opacity: 0;
-}
-
-input[type="radio"]:focus + label {
-    border-color: blue;
-}
-
-input[type="radio"]:focus + label,
-input[type="radio"]:checked + label { 
-    background-color: #AC3B61;
-    color: white;
-}
-
-label {
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    font-size: 1.5rem;
-    border: 3px solid #AC3B61;
-    border-radius: 0.25rem;
-}
-
 .hidden {
     display: none;
 }
@@ -57,70 +35,6 @@ a>img {
     height: 50vh;
 }
 
-/* a {
-    display: block;
-} */
-
-/* a img {
-    position: absolute;
-    right: 0.5vw;
-    top: 0.5vw;
-} */
-/* 
-article:focus-within {
-    background-color: yellow;
-} */
-
 a:focus {
     outline: none;
 }
-
-
-
-
-/* 
-article {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 35vw;
-    height: 17.5vw;
-    border: 0.8vw solid green;
-    background-color: white;
-}
-
-article.dragged {
-    border-color: blue;
-    z-index: 1;
-}
-
-article p {
-    text-align: center;
-    width: 90%;
-}
-
-article a {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    right: 0;
-    text-decoration: none;
-    width: 4vw;
-    height: 4vw;
-}
-
-article a img {
-    width: 100%;
-    height: 100%;
-}
-
-article:focus-within {
-    background-color: yellow;
-}
-
-article a:focus {
-    outline: none;
-} */
