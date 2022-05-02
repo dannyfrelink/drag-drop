@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
 }
@@ -18,8 +20,11 @@ main {
 #controls-text {
     font-size: 1.5em;
     position: absolute;
-    top: 1vw;
-    left: 1vw;
+    top: 0;
+    left: 0;
+    padding: 1vw;
+    z-index: 2;
+    background-color: bisque;
 }
 
 #controls-text p:not(:first-of-type) {
@@ -30,10 +35,14 @@ main {
 #current-theme {
     font-size: 1.5em;
     position: absolute;
-    top: 1vw;
-    right: 1vw;
+    top: 0;
+    right: 0;
+    padding: 1vw;
     width: fit-content;
     font-style: italic;
+    z-index: 2;
+    background-color: bisque;
+
 }
 
 .hidden {

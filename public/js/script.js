@@ -11,8 +11,18 @@ const currentThemeText = document.querySelector('#current-theme');
 // Randomize position of images
 anchors.forEach(anchor => {
     anchor.style.top = `${Math.floor(Math.random() * 250) + 100}px`;
-    anchor.style.left = `${Math.floor(Math.random() * 650) + 200}px`;
+    anchor.style.left = `${Math.floor(Math.random() * 650) + 250}px`;
 });
+
+// Remove image dragging animation
+const images = document.querySelectorAll('img');
+images.forEach(image => {
+    image.ondragstart = () => {
+        return false;
+    }
+});
+
+let counterMouseMove = 0;
 
 // Add focus styling and move anchors with keyboard
 anchors.forEach(anchor => {
@@ -21,9 +31,18 @@ anchors.forEach(anchor => {
         anchors.forEach(a => {
             a.classList.remove('dragged');
             a.removeEventListener('keydown', moveKeys);
+            a.removeEventListener('mousemove', mouseMove);
         });
         anchor.classList.add('dragged');
         anchor.addEventListener('keydown', moveKeys);
+    });
+
+    // Mouse dragging
+    anchor.addEventListener('mousedown', () => {
+        anchor.addEventListener('mousemove', mouseMove);
+    });
+    anchor.addEventListener('mouseup', () => {
+        anchor.removeEventListener('mousemove', mouseMove);
     });
 
     const moveKeys = e => {
@@ -45,11 +64,26 @@ anchors.forEach(anchor => {
             anchor.style.top = parseInt(anchor.style.top) + 15 + "px";
         }
     }
+
+    const mouseMove = e => {
+        const xPosition = e.clientX;
+        const yPosition = e.clientY;
+        const maxWidth = window.innerWidth - 60;
+        const maxHeight = window.innerHeight - 220;
+        const edgeDetectionQuery = (xPosition < maxWidth && xPosition > 60) && (yPosition < window.innerHeight && yPosition < maxHeight && yPosition > 220)
+
+        if (edgeDetectionQuery) {
+            console.log(window.innerWidth)
+            anchor.style.left = `${xPosition - 60}px`;
+            anchor.style.top = `${yPosition - 220}px`;
+        }
+    }
 });
 
 let counterTab = 0;
 let counterThemeSelector = 0;
 
+// Eventlisteners on keypress
 window.addEventListener('keyup', e => {
     const keyCode = e.keyCode;
 
