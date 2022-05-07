@@ -1,3 +1,4 @@
+const title = document.querySelector('h1');
 const sections = document.querySelectorAll('section:not(:first-of-type)');
 const anchors = document.querySelectorAll('a');
 const beerAnchors = document.querySelectorAll('#beers a');
@@ -16,4 +17,4 @@ images.forEach(image => {
     }
 });
 
-export { sections, anchors, arrayBeerAnchors, arrayBookAnchors, currentThemeText }
+export { title, sections, anchors, arrayBeerAnchors, arrayBookAnchors, currentThemeText }
