@@ -65,7 +65,7 @@ anchors.forEach(anchor => {
         const yPosition = e.clientY;
         const maxWidth = window.innerWidth - 60;
         const maxHeight = window.innerHeight - 220;
-        const edgeDetectionQuery = (xPosition < maxWidth && xPosition > 60) && (yPosition < window.innerHeight && yPosition < maxHeight && yPosition > 220)
+        const edgeDetectionQuery = (xPosition < maxWidth && xPosition > 60) && (yPosition < maxHeight && yPosition > 220)
 
         if (edgeDetectionQuery) {
             anchor.style.left = `${xPosition - 60}px`;

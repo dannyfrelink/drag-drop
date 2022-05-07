@@ -17,6 +17,11 @@ main {
     margin: auto;
 }
 
+h1 {
+    font-size: 3em;
+    margin: 1em auto 0;
+    width: fit-content;
+}
 
 #controls-text {
     font-size: 1.5em;
