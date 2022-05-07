@@ -9,28 +9,59 @@ window.addEventListener('keyup', e => {
 
     // On click 'Backspace'
     if (keyCode === 8) {
-        arrayBeerAnchors[counterTab].remove();
-        arrayBeerAnchors.splice(counterTab, 1)
+        if (counterThemeSelector % 2 === 1 && arrayBookAnchors.length > 0) {
+            arrayBookAnchors[counterTab].remove();
+            arrayBookAnchors.splice(counterTab, 1);
+            if (counterTab < 0) {
+                counterTab = arrayBookAnchors.length - 1
+            }
+            if (counterTab === arrayBookAnchors.length) {
+                counterTab = 0
+            }
+        }
+
+        else if (counterThemeSelector % 2 === 0 && arrayBeerAnchors.length > 0) {
+            arrayBeerAnchors[counterTab].remove();
+            arrayBeerAnchors.splice(counterTab, 1);
+
+            if (counterTab < 0) {
+                counterTab = arrayBeerAnchors.length - 1
+            }
+            if (counterTab === arrayBeerAnchors.length) {
+                counterTab = 0
+            }
+        }
     }
 
     // On click 'O'
     if (keyCode === 79) {
         counterTab--;
         if (counterTab < 0) {
-            counterTab = 14
+            if (counterThemeSelector % 2 === 1) {
+                counterTab = arrayBookAnchors.length - 1
+            } else {
+                counterTab = arrayBeerAnchors.length - 1
+            }
         }
     }
     // On click 'P'
     if (keyCode === 80) {
         counterTab++;
-        if (counterTab === 15) {
-            counterTab = 0
+        if (counterThemeSelector % 2 === 1) {
+            if (counterTab === arrayBookAnchors.length) {
+                counterTab = 0
+            }
+        } else {
+            if (counterTab === arrayBeerAnchors.length) {
+                counterTab = 0
+            }
         }
     }
     // Add focus to next anchor
-    if (counterThemeSelector % 2 === 1) {
+    if (counterThemeSelector % 2 === 1 && arrayBookAnchors.length > 0) {
         arrayBookAnchors[counterTab].focus();
-    } else {
+    } else if (counterThemeSelector % 2 === 0 && arrayBeerAnchors.length > 0) {
+        console.log(counterTab)
         arrayBeerAnchors[counterTab].focus();
     }
 
@@ -42,11 +73,15 @@ window.addEventListener('keyup', e => {
             if (counterThemeSelector % 2 === 1) {
                 currentThemeText.textContent = 'Huidig thema: Boeken';
                 title.textContent = 'Waardeer de boeken';
-                arrayBookAnchors[counterTab].focus();
-            } else {
+                if (arrayBookAnchors.length > 0) {
+                    arrayBookAnchors[counterTab].focus();
+                }
+            } else if (counterThemeSelector % 2 === 0) {
                 currentThemeText.textContent = 'Huidig thema: Bier';
                 title.textContent = 'Waardeer de pils';
-                arrayBeerAnchors[counterTab].focus();
+                if (arrayBeerAnchors.length > 0) {
+                    arrayBeerAnchors[counterTab].focus();
+                }
             }
         });
     }
