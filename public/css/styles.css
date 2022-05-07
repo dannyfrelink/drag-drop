@@ -75,6 +75,10 @@ a>img {
     width: 115px;
 }
 
+#books img {
+    width: 250px;
+}
+
 a:focus {
     outline: none;
 }
