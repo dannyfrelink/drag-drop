@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color: bisque;
+    background: url('../images/graph.jpg') no-repeat center bottom fixed;
+    background-size: cover;
     color: #AC3B61;
     font-weight: bold;
 }
