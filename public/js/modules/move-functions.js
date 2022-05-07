@@ -2,8 +2,8 @@ import { anchors } from "./variables.js";
 
 // Randomize position of images
 anchors.forEach(anchor => {
-    anchor.style.top = `${Math.floor(Math.random() * 250) + 100}px`;
-    anchor.style.left = `${Math.floor(Math.random() * 650) + 250}px`;
+    anchor.style.top = `${Math.floor(Math.random() * 150) + 175}px`;
+    anchor.style.left = `${Math.floor(Math.random() * 700) + 250}px`;
 });
 
 // Add focus styling and move anchors with keyboard
@@ -63,13 +63,16 @@ anchors.forEach(anchor => {
     const mouseMove = e => {
         const xPosition = e.clientX;
         const yPosition = e.clientY;
-        const maxWidth = window.innerWidth - 60;
-        const maxHeight = window.innerHeight - 220;
-        const edgeDetectionQuery = (xPosition < maxWidth && xPosition > 60) && (yPosition < maxHeight && yPosition > 220)
+        const minWidth = (e.target.clientWidth / 2) + 60
+        const maxWidth = window.innerWidth - (e.target.clientWidth / 2) - 65;
+        const minHeight = (e.target.clientHeight / 2) + 170
+        const maxHeight = window.innerHeight - (e.target.clientHeight / 2) - 110;
+
+        const edgeDetectionQuery = (xPosition < maxWidth && xPosition > minWidth) && (yPosition < maxHeight && yPosition > minHeight);
 
         if (edgeDetectionQuery) {
-            anchor.style.left = `${xPosition - 60}px`;
-            anchor.style.top = `${yPosition - 220}px`;
+            anchor.style.left = `${xPosition - (e.target.clientWidth / 2)}px`;
+            anchor.style.top = `${yPosition - (e.target.clientHeight / 2)}px`;
         }
     }
 });

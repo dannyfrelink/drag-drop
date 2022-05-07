@@ -33,8 +33,6 @@ h1 {
     top: 0;
     left: 0;
     padding: 1vw;
-    z-index: 2;
-    background-color: bisque;
 }
 
 #controls-text p:not(:first-of-type) {
@@ -50,9 +48,6 @@ h1 {
     padding: 1vw;
     width: fit-content;
     font-style: italic;
-    z-index: 2;
-    background-color: bisque;
-
 }
 
 .hidden {
