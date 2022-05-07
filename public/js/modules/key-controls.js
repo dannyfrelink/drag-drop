@@ -61,7 +61,6 @@ window.addEventListener('keyup', e => {
     if (counterThemeSelector % 2 === 1 && arrayBookAnchors.length > 0) {
         arrayBookAnchors[counterTab].focus();
     } else if (counterThemeSelector % 2 === 0 && arrayBeerAnchors.length > 0) {
-        console.log(counterTab)
         arrayBeerAnchors[counterTab].focus();
     }
 
