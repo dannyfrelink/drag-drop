@@ -1,4 +1,4 @@
-import { sections, arrayBeerAnchors, arrayBookAnchors, currentThemeText } from './variables.js';
+import { title, sections, arrayBeerAnchors, arrayBookAnchors, currentThemeText } from './variables.js';
 
 let counterTab = 0;
 let counterThemeSelector = 0;
@@ -35,9 +35,11 @@ window.addEventListener('keyup', e => {
             section.classList.toggle('hidden');
             if (counterThemeSelector % 2 === 1) {
                 currentThemeText.textContent = 'Huidig thema: Boeken';
+                title.textContent = 'Waardeer de boeken';
                 arrayBookAnchors[counterTab].focus();
             } else {
                 currentThemeText.textContent = 'Huidig thema: Bier';
+                title.textContent = 'Waardeer de pils';
                 arrayBeerAnchors[counterTab].focus();
             }
         });
