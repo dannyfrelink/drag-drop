@@ -29,21 +29,34 @@ anchors.forEach(anchor => {
 
     const moveKeys = e => {
         const keyCode = e.keyCode;
+        const xPosition = e.target.style.left.split('px')[0];
+        const yPosition = e.target.style.top.split('px')[0];
+        const maxWidth = window.innerWidth - 125;
+        const maxHeight = window.innerHeight - 450;
+
         // On click 'H' or 'left arrow'
         if (keyCode === 37 || keyCode === 72) {
-            anchor.style.left = parseInt(anchor.style.left) - 15 + "px";
+            if (xPosition > 10) {
+                anchor.style.left = parseInt(anchor.style.left) - 15 + "px";
+            }
         }
         // On click 'K' or 'top arrow'
         else if (keyCode === 38 || keyCode === 75) {
-            anchor.style.top = parseInt(anchor.style.top) - 15 + "px";
+            if (yPosition > 5) {
+                anchor.style.top = parseInt(anchor.style.top) - 15 + "px";
+            }
         }
         // On click 'L' or 'right arrow'
         else if (keyCode === 39 || keyCode === 76) {
-            anchor.style.left = parseInt(anchor.style.left) + 15 + "px";
+            if (xPosition < maxWidth) {
+                anchor.style.left = parseInt(anchor.style.left) + 15 + "px";
+            }
         }
         // On click 'J' or 'bottom arrow'
         else if (keyCode === 40 || keyCode === 74) {
-            anchor.style.top = parseInt(anchor.style.top) + 15 + "px";
+            if (yPosition < maxHeight) {
+                anchor.style.top = parseInt(anchor.style.top) + 15 + "px";
+            }
         }
     }
 

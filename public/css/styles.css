@@ -62,7 +62,7 @@ a.dragged {
 }
 
 a>img {
-    height: 50vh;
+    width: 115px;
 }
 
 a:focus {
