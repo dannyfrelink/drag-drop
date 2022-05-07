@@ -7,7 +7,7 @@ let counterThemeSelector = 0;
 window.addEventListener('keyup', e => {
     const keyCode = e.keyCode;
 
-    // On click 'backspace'
+    // On click 'Backspace'
     if (keyCode === 8) {
         arrayBeerAnchors[counterTab].remove();
         arrayBeerAnchors.splice(counterTab, 1)
