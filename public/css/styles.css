@@ -12,6 +12,10 @@ body {
     font-weight: bold;
 }
 
+body.book {
+    background-image: url('../images/graph-book.jpg');
+}
+
 main {
     width: 85vw;
     margin: auto;

@@ -1,4 +1,4 @@
-import { title, sections, arrayBeerAnchors, arrayBookAnchors, currentThemeText } from './variables.js';
+import { body, title, sections, arrayBeerAnchors, arrayBookAnchors, currentThemeText } from './variables.js';
 
 let counterTab = 0;
 let counterThemeSelector = 0;
@@ -7,7 +7,7 @@ let counterThemeSelector = 0;
 window.addEventListener('keyup', e => {
     const keyCode = e.keyCode;
 
-    // On click 'Backspace'
+    // On click 'backspace' (remove element)
     if (keyCode === 8) {
         if (counterThemeSelector % 2 === 1 && arrayBookAnchors.length > 0) {
             arrayBookAnchors[counterTab].remove();
@@ -33,7 +33,7 @@ window.addEventListener('keyup', e => {
         }
     }
 
-    // On click 'O'
+    // On click 'O' (backwards TAB)
     if (keyCode === 79) {
         counterTab--;
         if (counterTab < 0) {
@@ -44,7 +44,7 @@ window.addEventListener('keyup', e => {
             }
         }
     }
-    // On click 'P'
+    // On click 'P' (forward TAB)
     if (keyCode === 80) {
         counterTab++;
         if (counterThemeSelector % 2 === 1) {
@@ -64,18 +64,23 @@ window.addEventListener('keyup', e => {
         arrayBeerAnchors[counterTab].focus();
     }
 
-    // On click 'spacebar'
+    // On click 'spacebar' (change theme)
     if (keyCode === 32) {
         counterThemeSelector++;
         sections.forEach(section => {
             section.classList.toggle('hidden');
+            // Book theme
             if (counterThemeSelector % 2 === 1) {
+                body.classList.add('book');
                 currentThemeText.textContent = 'Huidig thema: Boeken';
                 title.textContent = 'Waardeer de boeken';
                 if (arrayBookAnchors.length > 0) {
                     arrayBookAnchors[counterTab].focus();
                 }
-            } else if (counterThemeSelector % 2 === 0) {
+            }
+            // Beer theme
+            else if (counterThemeSelector % 2 === 0) {
+                body.classList.remove('book');
                 currentThemeText.textContent = 'Huidig thema: Bier';
                 title.textContent = 'Waardeer de pils';
                 if (arrayBeerAnchors.length > 0) {
