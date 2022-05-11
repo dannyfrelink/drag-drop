@@ -3,6 +3,7 @@ import { body, title, sections, arrayBeerAnchors, arrayBookAnchors, currentTheme
 let counterTab = 0;
 let counterThemeSelector = 0;
 
+// Change counterTab to active anchor after click
 anchors.forEach(anchor => {
     anchor.addEventListener('click', (e) => {
         counterTab = e.target.parentElement.tabIndex - 2;
