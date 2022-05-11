@@ -1,7 +1,13 @@
-import { body, title, sections, arrayBeerAnchors, arrayBookAnchors, currentThemeText } from './variables.js';
+import { body, title, sections, arrayBeerAnchors, arrayBookAnchors, currentThemeText, anchors } from './variables.js';
 
 let counterTab = 0;
 let counterThemeSelector = 0;
+
+anchors.forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+        counterTab = e.target.parentElement.tabIndex - 2;
+    })
+})
 
 // Eventlisteners on keypress
 window.addEventListener('keyup', e => {
