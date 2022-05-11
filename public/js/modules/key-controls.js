@@ -7,8 +7,8 @@ let counterThemeSelector = 0;
 anchors.forEach(anchor => {
     anchor.addEventListener('click', (e) => {
         counterTab = e.target.parentElement.tabIndex - 2;
-    })
-})
+    });
+});
 
 // Eventlisteners on keypress
 window.addEventListener('keyup', e => {
@@ -20,10 +20,10 @@ window.addEventListener('keyup', e => {
             arrayBookAnchors[counterTab].remove();
             arrayBookAnchors.splice(counterTab, 1);
             if (counterTab < 0) {
-                counterTab = arrayBookAnchors.length - 1
+                counterTab = arrayBookAnchors.length - 1;
             }
             if (counterTab === arrayBookAnchors.length) {
-                counterTab = 0
+                counterTab = 0;
             }
         }
 
@@ -32,10 +32,10 @@ window.addEventListener('keyup', e => {
             arrayBeerAnchors.splice(counterTab, 1);
 
             if (counterTab < 0) {
-                counterTab = arrayBeerAnchors.length - 1
+                counterTab = arrayBeerAnchors.length - 1;
             }
             if (counterTab === arrayBeerAnchors.length) {
-                counterTab = 0
+                counterTab = 0;
             }
         }
     }
@@ -45,9 +45,9 @@ window.addEventListener('keyup', e => {
         counterTab--;
         if (counterTab < 0) {
             if (counterThemeSelector % 2 === 1) {
-                counterTab = arrayBookAnchors.length - 1
+                counterTab = arrayBookAnchors.length - 1;
             } else {
-                counterTab = arrayBeerAnchors.length - 1
+                counterTab = arrayBeerAnchors.length - 1;
             }
         }
     }
@@ -56,11 +56,11 @@ window.addEventListener('keyup', e => {
         counterTab++;
         if (counterThemeSelector % 2 === 1) {
             if (counterTab === arrayBookAnchors.length) {
-                counterTab = 0
+                counterTab = 0;
             }
         } else {
             if (counterTab === arrayBeerAnchors.length) {
-                counterTab = 0
+                counterTab = 0;
             }
         }
     }
