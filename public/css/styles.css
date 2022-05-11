@@ -62,7 +62,8 @@ a {
 }
 
 a.dragged {
-    border: 3px solid blue;
+    border: 5px solid hotpink;
+    box-shadow: 0px 3px 15px hotpink;
     z-index: 1;
 }
 
