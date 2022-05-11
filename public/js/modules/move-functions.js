@@ -31,18 +31,24 @@ anchors.forEach(anchor => {
         const keyCode = e.keyCode;
         const xPosition = e.target.style.left.split('px')[0];
         const yPosition = e.target.style.top.split('px')[0];
-        const maxWidth = window.innerWidth - 125;
-        const maxHeight = window.innerHeight - 450;
+        const minWidth = (e.target.clientWidth / 2) + 20
+        const maxWidth = window.innerWidth - (e.target.clientWidth / 2) - 130;
+        const minHeight = (e.target.clientHeight / 2) - 50
+        const maxHeight = window.innerHeight - (e.target.clientHeight / 2) - 340;
+        // const maxWidth = window.innerWidth - 125;
+        // const maxHeight = window.innerHeight - 450;
+
+        console.log(e.target)
 
         // On click 'H' or 'left arrow'
         if (keyCode === 37 || keyCode === 72) {
-            if (xPosition > 10) {
+            if (xPosition > minWidth) {
                 anchor.style.left = parseInt(anchor.style.left) - 15 + "px";
             }
         }
         // On click 'K' or 'top arrow'
         else if (keyCode === 38 || keyCode === 75) {
-            if (yPosition > 5) {
+            if (yPosition > minHeight) {
                 anchor.style.top = parseInt(anchor.style.top) - 15 + "px";
             }
         }
