@@ -31,24 +31,18 @@ anchors.forEach(anchor => {
         const keyCode = e.keyCode;
         const xPosition = e.target.style.left.split('px')[0];
         const yPosition = e.target.style.top.split('px')[0];
-        const minWidth = (e.target.clientWidth / 2) + 20
-        const maxWidth = window.innerWidth - (e.target.clientWidth / 2) - 130;
-        const minHeight = (e.target.clientHeight / 2) - 50
-        const maxHeight = window.innerHeight - (e.target.clientHeight / 2) - 340;
-        // const maxWidth = window.innerWidth - 125;
-        // const maxHeight = window.innerHeight - 450;
-
-        console.log(e.target)
+        const maxWidth = window.innerWidth - e.target.clientWidth - 80;
+        const maxHeight = window.innerHeight - e.target.clientHeight - 130;
 
         // On click 'H' or 'left arrow'
         if (keyCode === 37 || keyCode === 72) {
-            if (xPosition > minWidth) {
+            if (xPosition > 80) {
                 anchor.style.left = parseInt(anchor.style.left) - 15 + "px";
             }
         }
         // On click 'K' or 'top arrow'
         else if (keyCode === 38 || keyCode === 75) {
-            if (yPosition > minHeight) {
+            if (yPosition > 180) {
                 anchor.style.top = parseInt(anchor.style.top) - 15 + "px";
             }
         }
@@ -69,9 +63,9 @@ anchors.forEach(anchor => {
     const mouseMove = e => {
         const xPosition = e.clientX;
         const yPosition = e.clientY;
-        const minWidth = (e.target.clientWidth / 2) + 60
+        const minWidth = (e.target.clientWidth / 2) + 60;
         const maxWidth = window.innerWidth - (e.target.clientWidth / 2) - 65;
-        const minHeight = (e.target.clientHeight / 2) + 170
+        const minHeight = (e.target.clientHeight / 2) + 170;
         const maxHeight = window.innerHeight - (e.target.clientHeight / 2) - 110;
 
         const edgeDetectionQuery = (xPosition < maxWidth && xPosition > minWidth) && (yPosition < maxHeight && yPosition > minHeight);
