@@ -25,7 +25,7 @@ As I was building just for him, I wanted to dedicate my design fully on his life
 
 You can find all the progression of my work documented in my [Wiki](https://github.com/dannyfrelink/drag-drop/wiki/Proces). This will include my three tests of my prototype with Marijn.
 
-## 💎 Design Principles
+## 🎨 Design Principles
 
 To get a better understaning of how I implemented the Design Principles into my design, you can have a look at my [Wiki: Design Principles](https://github.com/dannyfrelink/drag-drop/wiki/Design-Principles).
 
