@@ -23,7 +23,7 @@ As I was building just for him, I wanted to dedicate my design fully on his life
 
 ## ⚙️ Process (Wiki)
 
-You can find all the progression of my work documented in my [Wiki](https://github.com/dannyfrelink/drag-drop/wiki/Proces). This will include my three tests of my prototype with Marijn. I'm also reflecting on this project at the end of that page.
+You can find all the progression of my work documented in my [Wiki](https://github.com/dannyfrelink/drag-drop/wiki/Proces). This will include my three tests of my prototype with Marijn. I'm also [reflecting](https://github.com/dannyfrelink/drag-drop/wiki/Proces#reflectie) on this project at the end of that page.
 
 ## 🎨 Design Principles
 
